@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "620927678888",
+    "project_id": "mytest-63f9f",
+    "storage_bucket": "mytest-63f9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620927678888:android:e2732023b7ec4b9910c59d",
+        "android_client_info": {
+          "package_name": "com.example.ulk_bazza"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChTsUoXJ7e72-Ao61YKn7r7Bj4yW-RYc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
