@@ -4,9 +4,11 @@ import 'package:get/get.dart';
 import 'package:ulk_bazza/commoncomponent/Colors.dart';
 import 'package:ulk_bazza/commoncomponent/String.dart';
 import 'package:ulk_bazza/view/OtpValidation.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MobileValidation extends StatefulWidget {
   const MobileValidation({super.key});
+  static String verifiy = '';
 
   @override
   State<MobileValidation> createState() => _MobileValidationState();
@@ -104,7 +106,16 @@ class _MobileValidationState extends State<MobileValidation> {
                 style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(CommonColors.grey),
                 ),
-                onPressed: () {
+                onPressed: () async{
+                  await FirebaseAuth.instance.verifyPhoneNumber(
+                  phoneNumber: '+91'+'${mobileController.text}}',
+                  verificationCompleted: (PhoneAuthCredential credential) {},
+                  verificationFailed: (FirebaseAuthException e) {},
+                  codeSent: (String verificationId, int? resendToken) {
+                    MobileValidation.verifiy =verificationId;
+                  },
+                  codeAutoRetrievalTimeout: (String verificationId) {},
+                );
                   Get.to(() => const OtpValidation(), arguments: '${mobileController.text}');
                 },
                 child: const Text(StringResource.otp)),
